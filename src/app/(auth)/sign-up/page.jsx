@@ -47,7 +47,6 @@ const SignUp = () => {
                 alert("Account created successfully done!!!");
                 router.push('/')
             }).catch((error) => {
-                console.log(error.message);
                 alert(`${error.message}`)
             }
             )

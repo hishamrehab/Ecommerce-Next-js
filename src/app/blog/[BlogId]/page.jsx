@@ -11,7 +11,7 @@ const SingleBlog = ({ params }) => {
 
     const result = blogList.filter((b) => b.id === Number(id));
 
-    // console.log(result);
+
 
 
     const socialList = [
