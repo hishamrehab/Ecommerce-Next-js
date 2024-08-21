@@ -1,5 +1,3 @@
-import React from 'react'
-
 const title = "Most Popular Tags"
 
 const tagsList = [

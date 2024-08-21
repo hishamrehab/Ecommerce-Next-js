@@ -1,6 +1,4 @@
 "use client"
-
-import { useState } from 'react';
 import blogList from '../../../../public/utilis/blogdata';
 import PageHeader from '../../components/PageHeader';
 import Tags from '../../shop/Tags';

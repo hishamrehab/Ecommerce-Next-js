@@ -8,7 +8,6 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 
-
 // import required modules
 import { Autoplay } from 'swiper/modules';
 
@@ -70,7 +69,7 @@ const Sponsor = () => {
                                     <SwiperSlide key={i}>
                                         <div className='sponsor-item'>
                                             <div className='sponsor-thumb'>
-                                                <Image src={val.imgUrl} alt='' layout='fill' />
+                                                <Image src={val.imgUrl} alt='' width={100} height={100} />
                                             </div>
                                         </div>
                                     </SwiperSlide>

@@ -1,6 +1,7 @@
-import { Button } from 'bootstrap';
 import React, { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
+
 const Search = ({ products, GridList }) => {
     const [searchTerm, setSearchTerm] = useState("");
     const filteredProducts = products.filter((product) => product.name.toLowerCase().includes(searchTerm.toLowerCase()));
@@ -19,7 +20,7 @@ const Search = ({ products, GridList }) => {
                     <Link key={product.id} to={`/shop${product.id}`}>
                         <div className='d-flex gap-3 p-2'>
                             <div className='pro-thumb h-25'>
-                                <img src={product.img} alt='' width={70} className='flex-{grow | shrink}-0' />
+                                <Image src={product.img} alt='' width={70} height={70} className='flex-{grow | shrink}-0' />
                             </div>
                             <div className='product-content'>
                                 <p>

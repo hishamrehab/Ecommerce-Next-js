@@ -164,8 +164,6 @@ const CategoryShowCase = () => {
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>)}</div>
                 </div >
             </div >

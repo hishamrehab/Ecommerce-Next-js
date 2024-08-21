@@ -1,5 +1,3 @@
-
-
 const Pagination = ({ productsParPage, totalProducts, paginate, activePage }) => {
     const pageNumbers = [];
     for (let i = 1; i <= Math.ceil(totalProducts / productsParPage); i++) {
@@ -22,7 +20,9 @@ const Pagination = ({ productsParPage, totalProducts, paginate, activePage }) =>
 
             {
                 pageNumbers.map((number) => (
-                    <li key={number} className={`page-item ${number === activePage ? "bg-warning" : ""}`} onClick={() => paginate(number)}>
+                    <li key={number} className={`page-item ${number === activePage ? "bg-warning" : ""}`} onClick={() => paginate(number)} style={{
+                        borderRadius: "50%"
+                    }}>
                         <button className='bg-transparent'>{number}</button>
                     </li>
                 ))

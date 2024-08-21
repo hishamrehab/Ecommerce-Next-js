@@ -1,11 +1,10 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import PageHeader from '../components/PageHeader';
-import { Swiper, SwiperSlide } from "swiper/react";
 import PopularPost from "./PopularPost"
 import Tags from "./Tags"
-import "swiper/css";
-import { Autoplay } from "swiper/modules"
+
+
 import ProductDisplay from './[id]/ProductDisplay';
 import Review from './Review';
 import data from "../products.json"

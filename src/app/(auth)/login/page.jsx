@@ -82,7 +82,7 @@ const Login = () => {
                                         <input type='checkbox' name='remember' id='remember' />
                                         <label href="remember">Remember me</label>
                                     </div>
-                                    <Link href="/forgetpass">Forget Password </Link>
+
                                 </div>
                             </div>
                             <div className='form-group'>

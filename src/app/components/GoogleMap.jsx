@@ -1,5 +1,3 @@
-import React from 'react'
-
 const GoogleMap = () => {
     return (
         <div className='map-area'>

@@ -1,4 +1,3 @@
-import React from 'react'
 import PageHeader from '../components/PageHeader'
 import blogList from "../../../public/utilis/blogdata"
 import Link from 'next/link'
