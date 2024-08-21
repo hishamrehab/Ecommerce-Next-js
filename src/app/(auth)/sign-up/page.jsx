@@ -1,10 +1,8 @@
 "use client"
 import React, { useContext, useState } from 'react'
-// ../context/AuthProvider
 import { AuthContext } from '../../context/AuthProvider';
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import delImageUrl from "/images/shop/del.png"
 
 const title = "Register";
 const socialTitle = "Login With Social Media";

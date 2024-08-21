@@ -23,7 +23,7 @@ const CardPage = () => {
 
 
     useEffect(() => {
-        // Fetch card items from local storage
+
         const storedCardItems = JSON.parse(localStorage.getItem("cart")) || [];
         setCardItems(storedCardItems);
     }, []);
@@ -33,21 +33,21 @@ const CardPage = () => {
     }
 
     if (!user) {
-        return null; // Optionally, you could show a loading spinner or message here
+        return null;
     }
 
-    // Calculate prices
+
     const calculateTotalPrice = (item) => item.price * item.quantity;
 
     const handleIncrease = (item) => {
         item.quantity += 1;
         setCardItems([...cardItems]);
 
-        // Update local storage with new cart items
+
         localStorage.setItem("cart", JSON.stringify(cardItems));
     }
 
-    // Handle Quantity decrease
+
     const handleDecrease = (item) => {
         if (item.quantity > 1) {
             item.quantity -= 1;
@@ -56,10 +56,10 @@ const CardPage = () => {
         }
     }
 
-    // Handle item removal
+
     const handleRemoveItem = (item) => {
         const updatedCart = cardItems.filter((cardItem) => cardItem.id !== item.id);
-        // Update new card
+
         setCardItems(updatedCart);
         updateLocalStorage(updatedCart);
     }
@@ -68,12 +68,12 @@ const CardPage = () => {
         localStorage.setItem("cart", JSON.stringify(cart));
     }
 
-    // Cart subtotal
+
     const cartSubTotal = cardItems.reduce((total, item) => {
         return total + calculateTotalPrice(item);
     }, 0);
 
-    // Order total
+
     const orderTotal = cartSubTotal;
 
     return (
@@ -83,7 +83,7 @@ const CardPage = () => {
             <div className='shop-cart padding-tb'>
                 <div className="container">
                     <div className="section-wrapper">
-                        {/* Cart top */}
+
                         <div className='cart-top'>
                             <table>
                                 <thead>
@@ -95,7 +95,7 @@ const CardPage = () => {
                                         <th className='cat-edit'>delete</th>
                                     </tr>
                                 </thead>
-                                {/* table head */}
+
                                 <tbody>
                                     {
                                         cardItems.length > 0 ? (cardItems.map((item, index) => (
@@ -154,7 +154,7 @@ const CardPage = () => {
                                     </div>
                                 </form>
                             </div>
-                            {/* checkOut box */}
+
                             <div className='shiping-box'>
                                 <div className='row'>
                                     <div className='col-md-6 col-12'>
@@ -218,7 +218,7 @@ const CardPage = () => {
                                 </div>
 
                             </div>
-                            {/* shopping box */}
+
                         </div>
                     </div>
                 </div>

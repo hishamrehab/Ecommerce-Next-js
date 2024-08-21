@@ -249,7 +249,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            {/* footer-bottom */}
+
             <div className='footer-bottom'>
                 <div className='container'>
                     <div className='section-wrapper'>

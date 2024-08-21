@@ -10,10 +10,10 @@ const NavItems = () => {
     const [socialToggle, setSocialToggle] = useState(false);
     const [headerFixed, setHeaderFixed] = useState(false);
 
-    // authInfo
+
     const { user } = useContext(AuthContext);
 
-    // addEvent Listener for scrolling
+
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 200) {
@@ -32,7 +32,7 @@ const NavItems = () => {
 
     return (
         <header className={`header-section style-4 ${headerFixed ? "header-fixed fadeInUp" : ""}`}>
-            {/* header top styles */}
+
             {!user && (
                 <div className={`header-top d-md-none ${socialToggle ? "open" : ""}`}>
                     <div className='container'>
@@ -46,11 +46,11 @@ const NavItems = () => {
 
 
 
-            {/* header bottom */}
+
             <div className='header-bottom'>
                 <div className='container'>
                     <div className='header-wrapper'>
-                        {/* logo */}
+
                         <div className='logo-search-acte'>
                             <div className='logo'>
                                 <Link href={"/"}>
@@ -59,7 +59,7 @@ const NavItems = () => {
                             </div>
                         </div>
 
-                        {/*  menu area */}
+
 
                         <div className='menu-area'>
                             <div className='menu'>
@@ -76,7 +76,7 @@ const NavItems = () => {
                             </div>
 
 
-                            {/* sign in & log in */}
+
                             {user ? user.email
                                 : (
                                     <>
@@ -86,13 +86,13 @@ const NavItems = () => {
                                 )}
 
 
-                            {/* menu-toggler */}
+
                             <div onClick={() => setMenuToggle(!menuToggle)} className={`header-bar d-lg-none ${menuToggle ? "active" : ""}`}>
                                 <span></span>
                                 <span></span>
                                 <span></span>
                             </div>
-                            {/* social toggler */}
+
                             <div className='ellepsis-bar d-md-none' onClick={() => setSocialToggle(!socialToggle)}><i className="icofont-info-square"></i></div>
                         </div>
                     </div>

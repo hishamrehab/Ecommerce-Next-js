@@ -49,7 +49,7 @@ const About = () => {
                             </div>
                         </div>
 
-                        {/* 2 nd col */}
+
                         <div className='col'>
                             <div className="about-right">
                                 <div className='section-header'>
