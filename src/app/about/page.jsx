@@ -1,5 +1,5 @@
 import React from 'react'
-import PageHeader from '../components/pageHeader';
+import PageHeader from '../components/PageHeader';
 
 const subTitle = "About Our Brand"; const title = "Good Qualification Services And Better Expriences"; const desc = "Distinctively provide acces mutfuncto users whereas transparent proceses somes ncentivize eficient functionalities rather than extensible archtectur communicate leveraged services and cross-platform.";
 

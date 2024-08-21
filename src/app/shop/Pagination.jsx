@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 const Pagination = ({ productsParPage, totalProducts, paginate, activePage }) => {
     const pageNumbers = [];

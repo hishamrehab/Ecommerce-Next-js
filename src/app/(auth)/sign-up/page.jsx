@@ -4,6 +4,7 @@ import React, { useContext, useState } from 'react'
 import { AuthContext } from '../../context/AuthProvider';
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import delImageUrl from "/images/shop/del.png"
 
 const title = "Register";
 const socialTitle = "Login With Social Media";
@@ -46,7 +47,7 @@ const SignUp = () => {
             createUser(email, password).then((userCredential) => {
                 const user = userCredential.user;
                 alert("Account created successfully done!!!");
-                router.push('/dashboard')
+                router.push('/')
             }).catch((error) => {
                 console.log(error.message);
                 alert(`${error.message}`)

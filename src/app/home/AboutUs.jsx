@@ -62,7 +62,7 @@ const AboutUs = () => {
                         </div>
                         <div className='col'>
                             <div className='instructor-thumb'>
-                                <Image src="/images/instructor/01.jpg" alt='' width={500} height={500} />
+                                <Image src="/images/instructor/01.png" alt='' width={500} height={500} />
                             </div>
                         </div>
                     </div>

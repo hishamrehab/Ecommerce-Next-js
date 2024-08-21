@@ -4,14 +4,14 @@ import Rating from '../components/Rating';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import image from "../../../public/images/about/01.jpg"
-// /images/shape-img/icon/02.png
+import shapeImg1 from "../../../public/images/shape-img/icon/01.png"
+
 
 const title = "Our Products";
 
 const ProductData = [
     {
-        imgUrl: "/images/about/01.jpg",
+        imgUrl: "/images/categoryTab/01.jpg",
         cate: 'Shoes',
         title: 'Nike Premier X',
         author: '/images/course/author/01.jpg',
@@ -104,8 +104,12 @@ const CategoryShowCase = () => {
     return (
         <div className='course-section style-3 padding-tb'>
             {/* shapes */}
-            {/* <div className='course-shape one'> <img src={shapeImg1} alt='' /> </div> */}
-            {/* <div className='course-shape two'> <img src={shapeImg2} alt='' /> </div> */}
+            <div className='course-shape one'>
+                <Image src={shapeImg1} alt='' width={150} height={150} /> </div>
+            <div className='course-shape two'>
+                <Image src={shapeImg1} alt='' width={150} height={150} /> </div>
+
+
             {/* main section */}
             <div className='container'>
                 {/* section header */}

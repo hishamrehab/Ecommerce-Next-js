@@ -7,14 +7,15 @@ import Tags from '../../shop/Tags';
 import PopularPost from '../../shop/PopularPost';
 
 const SingleBlog = ({ params }) => {
-    const [blog, setBlog] = useState(blogList);
-
-    const id = params;
 
 
-    const result = blog.filter((b) => b.id === id);
+    let id = params.BlogId;
 
-    console.log(result);
+    const result = blogList.filter((b) => b.id === Number(id));
+
+    // console.log(result);
+
+
     const socialList = [
         { iconName: 'icofont-facebook', siteLink: '#', className: 'facebook' },
         { iconName: 'icofont-twitter', siteLink: '#', className: 'twitter' },

@@ -1,34 +1,53 @@
 "use client"
-import React, { useEffect, useState } from 'react'
-import PageHeader from '../components/pageHeader';
-import Link from 'next/link'
+import React, { useEffect, useState, useContext } from 'react';
+import PageHeader from '../components/PageHeader';
+import Link from 'next/link';
+import CheckOutPage from "../shop/CheckOutPage";
+import { useRouter } from 'next/navigation';
+import { AuthContext } from "../context/AuthProvider";
+import Image from 'next/image'
 
 import delImageUrl from "../../../public/images/shop/del.png"
-import CheckOutPage from "../shop/CheckOutPage"
-
 
 const CardPage = () => {
     const [cardItems, setCardItems] = useState([]);
+    const { user, loading } = useContext(AuthContext);
+    const router = useRouter();
+
+    useEffect(() => {
+
+        if (!loading && !user) {
+            router.push('/login');
+        }
+    }, [user, loading, router]);
 
 
     useEffect(() => {
-        // fetch card item from local storage
+        // Fetch card items from local storage
         const storedCardItems = JSON.parse(localStorage.getItem("cart")) || [];
         setCardItems(storedCardItems);
-    }, [])
+    }, []);
 
-    console.log(cardItems);
-    // calculate prices
-    const calculateTotalPrice = (item) => (item.price * item.quantity)
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (!user) {
+        return null; // Optionally, you could show a loading spinner or message here
+    }
+
+    // Calculate prices
+    const calculateTotalPrice = (item) => item.price * item.quantity;
+
     const handleIncrease = (item) => {
         item.quantity += 1;
         setCardItems([...cardItems]);
 
-        //update local storage with new cart items
+        // Update local storage with new cart items
         localStorage.setItem("cart", JSON.stringify(cardItems));
     }
 
-    // handle Quantity decrease
+    // Handle Quantity decrease
     const handleDecrease = (item) => {
         if (item.quantity > 1) {
             item.quantity -= 1;
@@ -37,23 +56,26 @@ const CardPage = () => {
         }
     }
 
-    // handle item remove
+    // Handle item removal
     const handleRemoveItem = (item) => {
         const updatedCart = cardItems.filter((cardItem) => cardItem.id !== item.id);
-        // update new card
+        // Update new card
         setCardItems(updatedCart);
         updateLocalStorage(updatedCart);
     }
+
     const updateLocalStorage = (cart) => {
-        localStorage.setItem("cart", JSON.stringify(cart))
+        localStorage.setItem("cart", JSON.stringify(cart));
     }
-    // cart subtotal
+
+    // Cart subtotal
     const cartSubTotal = cardItems.reduce((total, item) => {
-        return total + calculateTotalPrice(item)
+        return total + calculateTotalPrice(item);
     }, 0);
 
-    // order total
+    // Order total
     const orderTotal = cartSubTotal;
+
     return (
         <div>
             <PageHeader title={"Shop Cart"} curPage={"Cart Page"} />
@@ -81,7 +103,7 @@ const CardPage = () => {
                                                 <td className='product-item cat-product'>
                                                     <div className='p-thumb'>
                                                         <Link href="/shop">
-                                                            <img src={item.img} alt='' />
+                                                            <Image src={item.img} alt='' width={200} height={200} />
                                                         </Link>
                                                     </div>
                                                     <div className='p-content'>
@@ -103,10 +125,10 @@ const CardPage = () => {
                                                 </td>
                                                 <td className='cat-edit'>
                                                     <a href='#' onClick={() => handleRemoveItem(item)}>
-                                                        {/* <img src={delImageUrl} alt='' /> */}
-
+                                                        <Image src={delImageUrl} alt='' width={20} height={20} />
                                                     </a>
                                                 </td>
+
                                             </tr>
                                         ))) : (<h3 className='py-3 px-3'>No Products in your cart  ...</h3>)
                                     }
@@ -126,10 +148,10 @@ const CardPage = () => {
                                     <input type='submit' value={"Apply Coupon"} />
                                 </form>
                                 <form className='cart-checkout'>
-
-
-                                    <CheckOutPage />
-
+                                    <input type='submit' value="Update Card" />
+                                    <div>
+                                        <CheckOutPage />
+                                    </div>
                                 </form>
                             </div>
                             {/* checkOut box */}
@@ -205,4 +227,4 @@ const CardPage = () => {
     )
 }
 
-export default CardPage
+export default CardPage;
