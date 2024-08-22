@@ -1,7 +1,7 @@
 /** @type {*} */
 const nextConfig = {
   images: {
-    domains: ["assets.adidas.com"],
+    domains: ["assets.adidas.com", "i.imgur.com"],
   },
 };
 

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Rating from "../components/Rating"
+import Image from 'next/image'
 
 const ProductCard = ({ GridList, products }) => {
     return (
@@ -10,7 +11,7 @@ const ProductCard = ({ GridList, products }) => {
                         {/* product images */}
                         <div className='product-thumb'>
                             <div className='pro-thumb'>
-                                <img src={product.img} alt='' />
+                                <Image src={product.img} alt='' width={500} height={500} />
                             </div>
 
                             {/* Product action links */}
@@ -42,7 +43,7 @@ const ProductCard = ({ GridList, products }) => {
                         {/* product images */}
                         <div className='product-thumb'>
                             <div className='pro-thumb'>
-                                <img src={product.img} alt='' />
+                                <Image width={500} height={500} src={product.img} alt='' />
                             </div>
 
                             {/* Product action links */}

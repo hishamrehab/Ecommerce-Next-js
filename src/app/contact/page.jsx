@@ -6,6 +6,7 @@ const title = "We're Always Eager To Hear From You!";
 const conSubTitle = "Get in touch with Contact us";
 const conTitle = "Fill The Form Below So We Can Get To Know You And Your Needs Better.";
 const btnText = "Send our Message";
+import Image from 'next/image'
 
 const contactList = [
     { imgUrl: "/images/icon/01.png", imgAlt: "contact icon", title: "Office Address", desc: "1201 park street, Fifth Avenue", },
@@ -31,7 +32,7 @@ const Contact = () => {
                                         contactList.map((val, i) => (
                                             <div key={i} className='contact-item'>
                                                 <div className='contact-thumb mx-3'>
-                                                    <img src={val.imgUrl} alt='' />
+                                                    <Image src={val.imgUrl} alt='' width={500} height={500} />
                                                 </div>
                                                 <div className='content-content'>
                                                     <h6 className='title'>{val.title}</h6>

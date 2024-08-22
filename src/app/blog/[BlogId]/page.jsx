@@ -3,6 +3,8 @@ import blogList from '../../../../public/utilis/blogdata';
 import PageHeader from '../../components/PageHeader';
 import Tags from '../../shop/Tags';
 import PopularPost from '../../shop/PopularPost';
+import Image from 'next/image'
+
 
 const SingleBlog = ({ params }) => {
 
@@ -38,7 +40,7 @@ const SingleBlog = ({ params }) => {
                                                     {result.map((item) => (
                                                         <div key={item.id}>
                                                             <div className='post-thumb'>
-                                                                <img src={item.imgUrl} alt='' className='w-100' />
+                                                                <Image src={item.imgUrl} alt='' className='w-100' width={500} height={500} />
                                                             </div>
                                                             <div className='post-content'>
                                                                 <h3>{item.title}</h3>
@@ -57,10 +59,10 @@ const SingleBlog = ({ params }) => {
                                                                     <cite><a href='#'>...Melissa Hunter</a></cite>
                                                                 </blockquote>
                                                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit...</p>
-                                                                <img src="/images/blog/single/01.jpg" alt='' />
+                                                                <Image width={500} height={500} src="/images/blog/single/01.jpg" alt='' />
                                                                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit...</p>
                                                                 <div className='video-thumb'>
-                                                                    <img src='/images/blog/single/02.jpg' alt='' />
+                                                                    <Image src='/images/blog/single/02.jpg' alt='' width={500} height={500} />
                                                                     <a href='https://youtu.be/313GvO3pScc?t=6' className='video-button popup' target='_blank'>
                                                                         <i className='icofont-ui-play'></i>
                                                                     </a>

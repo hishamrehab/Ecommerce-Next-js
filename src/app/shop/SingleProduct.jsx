@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import PageHeader from '../components/PageHeader';
 import PopularPost from "./PopularPost"
 import Tags from "./Tags"
-
+import Image from 'next/image'
 
 import ProductDisplay from './[id]/ProductDisplay';
 import Review from './Review';
@@ -18,7 +18,7 @@ const SingleProduct = ({ params }) => {
             return item.id === id;
         })
         setProduct(selectedProduct);
-    }, []);
+    }, [id]);
 
 
 
@@ -38,7 +38,7 @@ const SingleProduct = ({ params }) => {
 
 
                                                 <div className='single-thumb'>
-                                                    <img src={product.img} alt='' />
+                                                    <Image src={product.img} alt='' width={500} height={500} />
                                                 </div>
 
 

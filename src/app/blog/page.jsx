@@ -1,6 +1,7 @@
 import PageHeader from '../components/PageHeader'
 import blogList from "../../../public/utilis/blogdata"
 import Link from 'next/link'
+import Image from 'next/image'
 
 const Blog = () => {
     return (
@@ -15,7 +16,7 @@ const Blog = () => {
                                     <div className='post-item'>
                                         <div className='post-inner'>
                                             <div className='post-thumb'>
-                                                <Link href={`/blog/${blog.id}`}><img src={blog.imgUrl} alt='' /></Link>
+                                                <Link href={`/blog/${blog.id}`}><Image width={500} height={500} src={blog.imgUrl} alt='' /></Link>
                                             </div>
                                             <div className='post-content'>
                                                 <Link href={`/blog/${blog.id}`}><h4>{blog.title}</h4></Link>

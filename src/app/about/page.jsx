@@ -1,6 +1,9 @@
 import PageHeader from '../components/PageHeader';
+import Image from 'next/image'
 
-const subTitle = "About Our Brand"; const title = "Good Qualification Services And Better Expriences"; const desc = "Distinctively provide acces mutfuncto users whereas transparent proceses somes ncentivize eficient functionalities rather than extensible archtectur communicate leveraged services and cross-platform.";
+const subTitle = "About Our Brand";
+const title = "Good Qualification Services And Better Expriences";
+const desc = "Distinctively provide acces mutfuncto users whereas transparent proceses somes ncentivize eficient functionalities rather than extensible archtectur communicate leveraged services and cross-platform.";
 
 const year = "30+";
 const experinces = "Years Of Experiences";
@@ -37,10 +40,10 @@ const About = () => {
                         <div className='col'>
                             <div className='about-left'>
                                 <div className="about-thumb">
-                                    <img src='/images/about/01.jpg' alt='' />
+                                    <Image src='/images/about/01.jpg' alt='' width={500} height={500} />
                                 </div>
                                 <div className='abs-thumb'>
-                                    <img src='/images/about/02.jpg' alt='' />
+                                    <Image src='/images/about/02.jpg' alt='' width={200} height={200} />
                                 </div>
                                 <div className='about-left-content'>
                                     <h3>{year}</h3>
@@ -62,7 +65,7 @@ const About = () => {
                                         {aboutList.map((val, i) => (
                                             <li key={i}>
                                                 <div className='sr-left'>
-                                                    <img src={val.imgUrl} alt='' />
+                                                    <Image src={val.imgUrl} alt='' width={200} height={200} />
                                                 </div>
                                                 <div className='sr-right'>
                                                     <h5>{val.title}</h5>

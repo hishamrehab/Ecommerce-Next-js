@@ -6,6 +6,7 @@ import Tags from "./Tags"
 import ProductDisplay from './ProductDisplay';
 import Review from './Review';
 import data from "../../products.json"
+import Image from 'next/image'
 
 const SingleProduct = ({ params }) => {
     const [product, setProduct] = useState({});
@@ -16,7 +17,7 @@ const SingleProduct = ({ params }) => {
             return item.id === id;
         })
         setProduct(selectedProduct);
-    }, []);
+    }, [id]);
 
 
 
@@ -34,7 +35,7 @@ const SingleProduct = ({ params }) => {
                                         <div className='product-thumb'>
                                             <div className=' pro-single-top'>
                                                 <div className='single-thumb'>
-                                                    <img src={product.img} alt='' />
+                                                    <Image src={product.img} alt='' width={500} height={500} />
                                                 </div>
 
 
