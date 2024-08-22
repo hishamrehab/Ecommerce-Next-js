@@ -13,14 +13,12 @@ const CheckOutPage = () => {
     const router = useRouter();
 
 
-
     const handleTabChange = (tabId) => {
         setActiveTab(tabId);
     };
 
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
-
 
 
 

@@ -22,7 +22,7 @@ const PopularPost = () => {
                         <li key={i} className='d-flex flex-wrap justify-content-between'>
                             <div className='post-thumb'>
                                 <Link href={`/blog/${blog.id}`}>
-                                    <Image src={blog.imgUrl} alt='' width={500} height={500} />
+                                    <Image src={blog.imgUrl} alt={blog.imgAlt} width={500} height={500} />
                                 </Link>
                             </div>
                             <div className='post-content'>

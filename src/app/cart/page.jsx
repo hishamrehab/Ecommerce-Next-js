@@ -6,7 +6,6 @@ import CheckOutPage from "../shop/CheckOutPage";
 import { useRouter } from 'next/navigation';
 import { AuthContext } from "../context/AuthProvider";
 import Image from 'next/image'
-
 import delImageUrl from "../../../public/images/shop/del.png"
 
 const CardPage = () => {

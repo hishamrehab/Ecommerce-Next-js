@@ -36,12 +36,9 @@ const SingleProduct = ({ params }) => {
                                         <div className='product-thumb'>
                                             <div className='swiper-container pro-single-top'>
 
-
                                                 <div className='single-thumb'>
                                                     <Image src={product.img} alt='' width={500} height={500} />
                                                 </div>
-
-
 
 
                                                 <div className='pro-single-prev'>

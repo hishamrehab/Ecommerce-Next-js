@@ -6,7 +6,7 @@ const title = "Become a Marchant";
 const desc = "Take courses on your any device with our app & learn all about business what you want. Just download & install & start to learn";
 const btnText = "Apply Now";
 
-// import image from "../../../public/images/instructor/01.jpg"
+
 import Link from 'next/link';
 import Image from 'next/image';
 const countList = [
